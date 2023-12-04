@@ -2,10 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "server.cjs",
+  "main": "index.cjs",
   "scripts": {
-    "start": "nodemon server.cjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.cjs"
   },
   "keywords": [],
   "author": "",

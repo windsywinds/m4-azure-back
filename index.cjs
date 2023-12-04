@@ -15,7 +15,7 @@ app.use(cors({
   credentials: false, // If you're using credentials (e.g., cookies) in your requests
 }));
 
-
+app.options('*', cors());
 
 app.get('/', landingRoute);
 app.use('/getrandom', getrandom);

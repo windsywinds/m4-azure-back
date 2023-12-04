@@ -59,4 +59,4 @@ jobs:
           app-name: 'mongobem4'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_47D053B2CF504F29BEA56D8C8FB50D8F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_MANUAL }}

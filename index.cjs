@@ -9,7 +9,7 @@ const getrandom = require('./routes/getRandom.cjs')
 const app = express();
 const PORT = process.env.PORT || 8001;
 
-app.use(cors());
+
 
 
 

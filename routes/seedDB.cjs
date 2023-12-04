@@ -10,20 +10,20 @@ mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 // Create a model based on the schema
 const Car = mongoose.model("Car", carSchema);
 
-// Route to fetch all cars
-router.get("/", async (req, res) => {
-  console.log("A request was made");
+// Route to seed the database
+router.post("/", async (req, res) => {
   try {
-    // Find all cars in the "cars" collection
-    const data = await Car.find();
+    const seedData = req.body; // Assuming you are sending the JSON data in the request body
 
-    // Respond with the data
-    res.status(200).json(data);
-    console.log(data);
+    // Insert seed data into the "cars" collection
+    await Car.insertMany(seedData);
+
+    // Respond with success message
+    res.status(201).json({ message: "Database seeded successfully" });
   } catch (error) {
     // Handle errors
-    console.error("Error fetching car data:", error);
-    res.status(500).json({ error: "Internal Server Error, but you reached the backend!" });
+    console.error("Error seeding the database:", error);
+    res.status(500).json({ error: "Internal Server Error when seeding" });
   }
 });
 

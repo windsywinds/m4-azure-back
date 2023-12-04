@@ -4,6 +4,7 @@ const express = require("express");
 const landingRoute = require('./routes/landing.cjs')
 const cardatabase = require('./routes/getDatabase.cjs')
 const getrandom = require('./routes/getRandom.cjs')
+const seed = require('./routes/seedDB.cjs')
 
 
 const app = express();
@@ -20,6 +21,7 @@ app.options('*', cors());
 app.get('/', landingRoute);
 app.use('/getrandom', getrandom);
 app.use('/cardatabase', cardatabase);
+app.use('/seed', seed);
 
 
  app.listen(PORT, () => {
